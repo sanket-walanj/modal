@@ -1,13 +1,17 @@
-// const rand = Math.floor(Math.random() * 10 + 1);
-// console.log(rand);
+const modal = document.querySelector('.modal'),
+  btn = document.querySelector('.btn'),
+  close = document.querySelector('.close');
 
-const number = document.querySelector('.number');
-const btn = document.querySelector('.generate');
+btn.addEventListener('click', openModal);
+close.addEventListener('click', closeModal);
+modal.addEventListener('click', closeModal);
 
-const generateNumber = () => {
-  const randomNumber = Math.floor(Math.random() * 10 + 1);
-  number.innerHTML = randomNumber;
-};
-
-btn.addEventListener('click', generateNumber);
-generateNumber();
+// open Modal
+function openModal(e) {
+  e.preventDefault();
+  modal.style.display = 'block';
+}
+// close Modal
+function closeModal(e) {
+  modal.style.display = 'none';
+}
